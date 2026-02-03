@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - DevConf 2026</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Normalize CSS -->
+<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Register for DevConf 2026</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <form action="#" method="POST">
+        <!-- Personal Information -->
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="firstName">First Name*</label>
+            <input type="text" id="firstName" name="firstName" required placeholder="First Name">
+
+            <label for="lastName">Last Name*</label>
+            <input type="text" id="lastName" name="lastName" required placeholder="Last Name">
+
+            <label for="email">Email*</label>
+            <input type="email" id="email" name="email" required placeholder="example@email.com">
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 99999 99999">
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob">
+        </fieldset>
+
+        <!-- Professional Details -->
+        <fieldset>
+            <legend>Professional Details</legend>
+            <label for="jobTitle">Job Title</label>
+            <input type="text" id="jobTitle" name="jobTitle">
+
+            <label for="company">Company / Organization</label>
+            <input type="text" id="company" name="company">
+
+            <label for="experience">Years of Experience</label>
+            <input type="number" id="experience" name="experience" min="0" max="50">
+
+            <label for="industry">Industry</label>
+            <select id="industry" name="industry">
+                <optgroup label="Technology">
+                    <option value="software">Software</option>
+                    <option value="ai">AI/ML</option>
+                </optgroup>
+                <optgroup label="Healthcare">
+                    <option value="healthtech">HealthTech</option>
+                </optgroup>
+                <optgroup label="Finance">
+                    <option value="fintech">FinTech</option>
+                </optgroup>
+            </select>
+        </fieldset>
+
+        <!-- Conference Preferences -->
+        <fieldset>
+            <legend>Conference Preferences</legend>
+            <label>Attendance Type</label>
+            <input type="radio" id="inperson" name="attendance" value="In-Person" required>
+            <label for="inperson">In-Person</label>
+            <input type="radio" id="virtual" name="attendance" value="Virtual">
+            <label for="virtual">Virtual</label>
+            <input type="radio" id="hybrid" name="attendance" value="Hybrid">
+            <label for="hybrid">Hybrid</label>
+
+            <label>Workshops</label>
+            <input type="checkbox" id="ws1" name="workshops" value="Web Dev">
+            <label for="ws1">Web Development</label>
+            <input type="checkbox" id="ws2" name="workshops" value="AI">
+            <label for="ws2">AI & ML</label>
+            <input type="checkbox" id="ws3" name="workshops" value="Cloud">
+            <label for="ws3">Cloud Computing</label>
+            <input type="checkbox" id="ws4" name="workshops" value="UX">
+            <label for="ws4">UX & UI</label>
+            <input type="checkbox" id="ws5" name="workshops" value="Data Science">
+            <label for="ws5">Data Science</label>
+
+            <label for="tshirt">T-Shirt Size</label>
+            <select id="tshirt" name="tshirt">
+                <option>XS</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+            </select>
+
+            <label for="diet">Dietary Requirements</label>
+            <textarea id="diet" name="diet" maxlength="500" placeholder="Any dietary restrictions?"></textarea>
+        </fieldset>
+
+        <!-- Additional Info -->
+        <fieldset>
+            <legend>Additional Information</legend>
+            <label for="accommodation">Special Accommodations</label>
+            <textarea id="accommodation" name="accommodation"></textarea>
+
+            <label for="hearAbout">How did you hear about us?</label>
+            <select id="hearAbout" name="hearAbout">
+                <option>Social Media</option>
+                <option>Colleague</option>
+                <option>Email</option>
+                <option>Website</option>
+                <option>Other</option>
+            </select>
+
+            <label for="resume">Upload Resume/CV (PDF only)</label>
+            <input type="file" id="resume" name="resume" accept=".pdf">
+        </fieldset>
+
+        <!-- Terms -->
+        <fieldset>
+            <legend>Terms & Newsletter</legend>
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the terms and conditions*</label>
+
+            <input type="checkbox" id="newsletter" name="newsletter">
+            <label for="newsletter">Subscribe to newsletter</label>
+        </fieldset>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2026 DevConf. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
