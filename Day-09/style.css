@@ -1,102 +1,201 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Card Collection</title>
+/* Your styles here */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+body {
+  background: radial-gradient(circle at top left, #1e3a8a, transparent 40%),
+              radial-gradient(circle at bottom right, #7c3aed, transparent 40%),
+              linear-gradient(135deg, #020617, #0f172a, #020617);
+  background-size: 200% 200%;
+  animation: bgMove 12s ease infinite;
+  color: #fff;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-  <h1>Dashboard Card Collection</h1>
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-  <div class="grid">
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
 
-    <!-- Flip Card -->
-    <div class="card flip-card">
-      <div class="flip-inner">
-        <div class="flip-front">
-          <h3>3D Flip Card</h3>
-          <p>Hover to rotate</p>
-        </div>
-        <div class="flip-back">
-          <h3>Back Side</h3>
-          <p>Advanced CSS Transform</p>
-        </div>
-      </div>
-    </div>
+.card {
+  position: relative;
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+}
 
-    <!-- Glass Card -->
-    <div class="card glass-card">
-      <h3>Glassmorphism</h3>
-      <img src="https://picsum.photos/400/250?random=1" alt="image">
-      <p>Blur + Transparency</p>
+/* FLIP CARD */
+.flip-card {
+  perspective: 1000px;
+}
 
-      <div class="progress-box">
-        <small>Progress</small>
-        <div class="progress">
-          <span></span>
-        </div>
-      </div>
-    </div>
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 0.8s;
+}
 
-    <!-- Border Card -->
-    <div class="card border-card">
-      <h3>Animated Border</h3>
-      <p>Gradient Animation</p>
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
 
-      <div class="progress-box">
-        <small>Completion</small>
-        <div class="progress">
-          <span></span>
-        </div>
-      </div>
-    </div>
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
-    <!-- Extra Card -->
-    <div class="card glass-card">
-      <h3>Zoom Effect</h3>
-      <img src="https://picsum.photos/400/250?random=2" alt="image">
-      <p>Hover to Zoom</p>
-    </div>
+.flip-front {
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+}
 
-  </div>
+.flip-back {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  transform: rotateY(180deg);
+}
 
+/* GLASS CARD */
+.glass-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  <!-- FAQ -->
-  <div class="faq">
-    <h2>Frequently Asked Questions</h2>
+.glass-card img {
+  width: 100%;
+  border-radius: 12px;
+  transition: 0.4s;
+}
 
-    <div class="faq-item">
-      <input type="checkbox" id="q1">
-      <label for="q1" class="faq-label">What is this project?</label>
-      <div class="faq-content">
-        <p>This is a dashboard layout with advanced CSS effects.</p>
-      </div>
-    </div>
+.glass-card:hover img {
+  transform: scale(1.1);
+}
 
-    <div class="faq-item">
-      <input type="checkbox" id="q2">
-      <label for="q2" class="faq-label">Is JavaScript used?</label>
-      <div class="faq-content">
-        <p>No, this project uses only HTML and CSS.</p>
-      </div>
-    </div>
+/* BORDER CARD */
+.border-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #22c55e, #3b82f6, #a855f7, #22c55e);
+  background-size: 300% 300%;
+  animation: border 5s linear infinite;
+  z-index: -1;
+}
 
-    <div class="faq-item">
-      <input type="checkbox" id="q3">
-      <label for="q3" class="faq-label">Is it responsive?</label>
-      <div class="faq-content">
-        <p>Yes, it adapts to mobile and desktop screens.</p>
-      </div>
-    </div>
+.border-card {
+  background: #020617;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  </div>
+@keyframes border {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-</body>
-</html>
+/* PROGRESS BAR */
+.progress {
+  height: 8px;
+  background: #1e293b;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #22c55e, #3b82f6);
+  animation: load 3s forwards;
+}
+
+@keyframes load {
+  to { width: 75%; }
+}
+
+/* FAQ */
+.faq {
+  max-width: 800px;
+  margin: 60px auto 0;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.faq-item {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.faq-item input {
+  display: none;
+}
+
+.faq-label {
+  display: block;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s;
+  padding: 0 20px;
+}
+
+.faq-content p {
+  padding: 15px 0;
+  font-size: 14px;
+}
+
+.faq-item input:checked ~ .faq-content {
+  max-height: 200px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  body { padding: 20px 10px; }
+  .card { height: 300px; }
+}
