@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Advanced Task Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+    <div class="header">
+      <h1>📋 Task Dashboard</h1>
+      <button id="themeToggle">🌙</button>
+    </div>
+
+    <div class="input-box">
+      <input type="text" id="taskInput" placeholder="Add a new task..." />
+      <button id="addBtn">Add</button>
+    </div>
+
+    <div class="filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="active">Active</button>
+      <button data-filter="completed">Completed</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <p id="empty">No tasks yet 🚀 Add one!</p>
+    <p id="stats">Total: 0 | Completed: 0</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
