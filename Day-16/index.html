@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Text Formatter Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Smart Text Formatter Pro</h1>
+
+    <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+
+    <div class="buttons">
+      <button onclick="convertToTitleCase()">Title Case</button>
+      <button onclick="countVowels()">Count Vowels</button>
+      <button onclick="generateSecretMessage()">Secret Message</button>
+      <button onclick="clearText()">Clear</button>
+      <button onclick="downloadText()">Download TXT</button>
+      <button onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+
+    <div class="stats">
+      <p><strong>Words:</strong> <span id="wordCount">0</span></p>
+      <p><strong>Characters:</strong> <span id="charCount">0</span></p>
+      <p><strong>Reading Time:</strong> <span id="readingTime">0 min</span></p>
+    </div>
+
+    <div class="output">
+      <h3>Output:</h3>
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
