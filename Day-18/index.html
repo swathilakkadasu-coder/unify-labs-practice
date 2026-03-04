@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Advanced Digital Pet Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+    <h1>🐾 Digital Pet Simulator</h1>
+
+    <div class="pet-card">
+      <h2 id="petName"></h2>
+      <p id="petType"></p>
+
+      <div class="stat">
+        <label>❤️ Health</label>
+        <progress id="healthBar" max="100"></progress>
+      </div>
+
+      <div class="stat">
+        <label>🍗 Hunger</label>
+        <progress id="hungerBar" max="100"></progress>
+      </div>
+
+      <div class="stat">
+        <label>⚡ Energy</label>
+        <progress id="energyBar" max="100"></progress>
+      </div>
+
+      <p id="message"></p>
+
+      <div class="buttons">
+        <button onclick="feedPet()">Feed</button>
+        <button onclick="playPet()">Play</button>
+        <button onclick="sleepPet()">Sleep</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
