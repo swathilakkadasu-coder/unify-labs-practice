@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Login & Team</title> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">  
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container"> 
+         <div class="brand-logo">Instagram</div> 
+          <form id="loginForm"><div class="input-group">
+  <input type="email" id="email" required>
+  <label>Email</label>
+</div>
+
+<div class="input-group password-box">
+  <input type="password" id="password" minlength="6" required>
+  <label>Password</label>
+  <span id="togglePass">👁️</span>
+</div>
+
+<button class="login-btn" type="submit">Log In</button>
+
+<div class="loader" id="loader"></div>
+<p id="msg"></p>
+
+  </form>  <div class="login-links">
+    <p>Forgot password? <a href="#">Reset</a></p>
+    <p>Don't have an account? <a href="#">Sign Up</a></p>
+  </div></div>
+  <section class="team-section">
+      <h2 class="team-title">Our Team</h2> 
+       <div class="team-grid">
+        <div class="team-card">
+  <img src="https://as1.ftcdn.net/v2/jpg/09/31/73/52/1000_F_931735287_Sm0wc3G7vVPJl50ObxMt2RF1E0gu8UYi.jpg" class="team-img">
+
+  <div class="social-overlay">
+    <a href="#">F</a>
+    <a href="#">X</a>
+    <a href="#">I</a>
+  </div>
+
+  <div class="team-info">
+    <h3>Kranthi</h3>
+    <p>Frontend Developer</p>
+  </div>
+</div>
+
+
+<div class="team-card">
+  <img src="https://as1.ftcdn.net/v2/jpg/06/46/90/42/1000_F_646904227_k0RmrloUIQKSOEdvjJfkfjTXLJXywCOo.jpg" class="team-img">
+
+  <div class="social-overlay">
+    <a href="#">F</a>
+    <a href="#">X</a>
+    <a href="#">I</a>
+  </div>
+
+  <div class="team-info">
+    <h3>Swathi</h3>
+    <p>Backend Developer</p>
+  </div>
+</div>
+
+
+<div class="team-card">
+  <img src="https://as1.ftcdn.net/v2/jpg/06/41/37/16/1000_F_641371673_kTa7s7nssaWdUZTu5fw6AFRhuXxkqBLa.jpg" class="team-img">
+
+  <div class="social-overlay">
+    <a href="#">F</a>
+    <a href="#">X</a>
+    <a href="#">I</a>
+  </div>
+
+  <div class="team-info">
+    <h3>Anjali</h3>
+    <p>UI Designer</p>
+  </div>
+</div>
+
+
+<div class="team-card">
+  <img src="https://as1.ftcdn.net/v2/jpg/06/17/16/36/1000_F_617163626_rOvAi9hFikGVYnFCmvjJlxWRahUyM87O.jpg" class="team-img">
+
+  <div class="social-overlay">
+    <a href="#">F</a>
+    <a href="#">X</a>
+    <a href="#">I</a>
+  </div>
+
+  <div class="team-info">
+    <h3>Rahul</h3>
+    <p>Project Manager</p>
+  </div>
+</div>
+
+  </div>
+</section>
+  <script>
+
+const form = document.getElementById("loginForm");
+const msg = document.getElementById("msg");
+const loader = document.getElementById("loader");
+const toggle = document.getElementById("togglePass");
+const password = document.getElementById("password");
+
+toggle.addEventListener("click", () => {
+  if(password.type === "password"){
+    password.type = "text";
+    toggle.innerText = "🙈";
+  } else {
+    password.type = "password";
+    toggle.innerText = "👁️";
+  }
+});
+
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const pass = password.value;
+
+  msg.innerText = "";
+  loader.style.display = "block";
+
+  setTimeout(() => {
+
+    loader.style.display = "none";
+
+    if(pass.length < 6){
+      msg.style.color = "red";
+      msg.innerText = "Password must be at least 6 characters";
+      return;
+    }
+
+    msg.style.color = "green";
+    msg.innerText = "Login Successful!";
+
+    form.reset();
+
+  }, 1500);
+});
+
+const cards = document.querySelectorAll(".team-card");
+
+window.addEventListener("scroll", () => {
+  cards.forEach(card => {
+    const pos = card.getBoundingClientRect().top;
+    const screen = window.innerHeight / 1.3;
+
+    if(pos < screen){
+      card.classList.add("show");
+    }
+  });
+});
+
+</script></body>
+</html>
