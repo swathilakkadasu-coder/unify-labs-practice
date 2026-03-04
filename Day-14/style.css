@@ -1,0 +1,92 @@
+/* Your styles here */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+
+  /* Better layered gradient */
+  background:
+    radial-gradient(circle at top left, #8ec5fc, transparent 40%),
+    radial-gradient(circle at bottom right, #e0c3fc, transparent 40%),
+    linear-gradient(135deg, #4facfe, #00f2fe);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* Heading */
+.game-container h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Subtitle */
+.game-container {
+  width: 330px;
+  padding: 32px 28px;
+  text-align: center;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* Input */
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 12px 0;
+
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+/* Hover Effects */
+button:hover {
+  opacity: 0.9;
+}
+
+/* Message Text */
+#message {
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+/* Attempts Text */
+#attempts {
+  font-weight: bold;
+  color: #111;
+}
+
+#guessBtn {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+}
+
+#restartBtn {
+  background: linear-gradient(135deg, #ef4444, #f87171);
+  color: white;
+}
