@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - DevConf 2026</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Contact Us</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>Contact Information</h2>
+        <address>
+            DevConf 2026<br>
+            Hyderabad, India<br>
+            Email: <a href="mailto:info@devconf2026.com">info@devconf2026.com</a><br>
+            Phone: <a href="tel:+919999999999">+91 99999 99999</a><br>
+            Office Hours: Mon-Fri 9:00AM - 6:00PM
+        </address>
+    </section>
+
+    <section>
+        <h2>Location Map</h2>
+        <iframe src="https://maps.google.com/maps?q=Hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="80%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <section>
+        <h2>Send Us a Message</h2>
+        <form action="#" method="POST">
+            <label for="name">Name*</label>
+            <input type="text" id="name" name="name" required minlength="2">
+
+            <label for="email">Email*</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+                <option>General Inquiry</option>
+                <option>Registration</option>
+                <option>Speakers</option>
+                <option>Schedule</option>
+                <option>Other</option>
+            </select>
+
+            <label for="message">Message*</label>
+            <textarea id="message" name="message" required rows="8" maxlength="2000"></textarea>
+
+            <label>Preferred Contact Method</label>
+            <input type="radio" id="contactEmail" name="contactMethod" value="Email" checked>
+            <label for="contactEmail">Email</label>
+            <input type="radio" id="contactPhone" name="contactMethod" value="Phone">
+            <label for="contactPhone">Phone</label>
+            <input type="radio" id="contactEither" name="contactMethod" value="Either">
+            <label for="contactEither">Either</label>
+
+            <label for="bestTime">Best Time to Call</label>
+            <input type="time" id="bestTime" name="bestTime">
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </section>
+
+    <section>
+        <h2>Follow Us</h2>
+        <p>
+            <a href="#">Twitter</a> |
+            <a href="#">LinkedIn</a> |
+            <a href="#">Facebook</a>
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 DevConf. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
