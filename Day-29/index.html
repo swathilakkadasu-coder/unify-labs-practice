@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ZENITH Blog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ZENITH Blogs</h1>
+    <button id="toggle">🌙</button>
+  </header>
+
+  <section class="editor">
+    <input id="title" placeholder="Title" />
+    <input id="category" placeholder="Category" />
+    <textarea id="content" placeholder="Write your blog..."></textarea>
+    <button onclick="createPost()">Publish</button>
+  </section>
+
+  <section id="posts" class="grid"></section>
+
+  <script src="script.js"></script>
+</body>
+</html>
