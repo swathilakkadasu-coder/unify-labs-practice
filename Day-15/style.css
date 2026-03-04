@@ -1,0 +1,47 @@
+/* Your styles here */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    font-family: 'Courier New', monospace;
+    color: #00ffcc;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.terminal {
+    width: 80%;
+    max-width: 900px;
+    height: 80vh;
+    background: #0a0a0a;
+    border: 2px solid #00ffcc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#output {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.input-line {
+    display: flex;
+}
+
+input {
+    background: transparent;
+    border: none;
+    color: #00ffcc;
+    font-family: inherit;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+}
