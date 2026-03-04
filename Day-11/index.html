@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coming Soon</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Particle Background -->
+<div class="particles"></div>
+
+<!-- Main Content -->
+<div class="container">
+
+  <h1 class="neon">Coming Soon</h1>
+
+  <p id="typewriter"></p>
+
+  <button id="notifyBtn">Notify Me</button>
+
+</div>
+
+
+<!-- Gallery -->
+<section class="gallery">
+
+  <img src="https://picsum.photos/300/400?1">
+  <img src="https://picsum.photos/300/350?2">
+  <img src="https://picsum.photos/300/450?3">
+  <img src="https://picsum.photos/300/300?4">
+  <img src="https://picsum.photos/300/380?5">
+  <img src="https://picsum.photos/300/420?6">
+
+</section>
+
+
+<!-- Modal -->
+<div class="modal" id="modal">
+
+  <div class="modal-content">
+
+    <span class="close">&times;</span>
+
+    <h2>Get Notified</h2>
+
+    <input 
+    type="email"
+    id="emailInput"
+    placeholder="Enter your email"
+    required/>
+    <p id="errorMsg" ></p>
+
+    <button id="submitBtn">Submit</button>
+
+  </div>
+
+</div>
+
+
+<!-- JavaScript -->
+<script>
+
+  /* Typewriter Effect */
+  const text = "We are building something amazing...";
+  let index = 0;
+  const speed = 100;
+
+  function typeWriter() {
+
+    if (index < text.length) {
+
+      document.getElementById("typewriter")
+      .innerHTML += text.charAt(index);
+
+      index++;
+      setTimeout(typeWriter, speed);
+
+    }
+  }
+
+  typeWriter();
+
+
+  /* Modal */
+  const modal = document.getElementById("modal");
+  const btn = document.getElementById("notifyBtn");
+  const close = document.querySelector(".close");
+
+  btn.onclick = () => {
+    modal.style.display = "flex";
+  }
+
+  close.onclick = () => {
+    modal.style.display = "none";
+  }
+
+  window.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+
+
+  /* Create Particles */
+  const particleBox = document.querySelector(".particles");
+
+  for(let i=0; i<30; i++){
+
+    const particle = document.createElement("span");
+
+    particle.style.left = Math.random() * 100 + "%";
+    particle.style.top = Math.random() * 100 + "%";
+    particle.style.animationDuration =
+      (Math.random()*10+5)+"s";
+
+    particleBox.appendChild(particle);
+
+  }
+  /* Email Validation */
+
+const emailInput = document.getElementById("emailInput");
+const submitBtn = document.getElementById("submitBtn");
+const errorMsg = document.getElementById("errorMsg");
+
+submitBtn.onclick = () => {
+
+  const email = emailInput.value.trim();
+
+  // Email Pattern
+  const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if(email === ""){
+    errorMsg.innerText = "Email is required ❌";
+    errorMsg.style.color = "red";
+  }
+
+  else if(!pattern.test(email)){
+    errorMsg.innerText = "Enter a valid email address ❌";
+    errorMsg.style.color = "orange";
+  }
+
+  else{
+    errorMsg.innerText = "Email submitted successfully ✅";
+    errorMsg.style.color = "lightgreen";
+
+    emailInput.value = "";
+
+    setTimeout(()=>{
+      modal.style.display="none";
+      errorMsg.innerText="";
+    },1500);
+  }
+
+};
+
+</script>
+
+</body>
+</html>
